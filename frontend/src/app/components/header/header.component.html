@@ -1,0 +1,45 @@
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <span class="logo"></span>
+      <span class="title">KopiToki</span>
+    </div>
+    <nav class="nav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/menu">Menu</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/contact">Contact</a>
+    </nav>
+
+    <div class="cart-icon" (click)="toggleCart()">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="badge" *ngIf="cartItems.length">{{ cartItems.length }}</span>
+    </div>
+  </div>
+
+  <div class="cart-panel" [class.active]="cartVisible">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-btn" (click)="toggleCart()">×</button>
+    </div>
+
+    <div class="cart-body" *ngIf="cartItems.length; else emptyCart">
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <div>{{ item.name }} (x{{ item.quantity }})</div>
+        <div>${{ (item.price * item.quantity).toFixed(2) }}</div>
+        <button (click)="removeItem(item._id)">Remove</button>
+      </div>
+
+      <div class="cart-total">
+        <strong>Total:</strong>
+        <span>${{ total.toFixed(2) }}</span>
+      </div>
+
+      <button class="clear-btn" (click)="onClearCart()">Clear Cart</button>
+    </div>
+
+    <ng-template #emptyCart>
+      <p>Your cart is empty.</p>
+    </ng-template>
+  </div>
+</header>

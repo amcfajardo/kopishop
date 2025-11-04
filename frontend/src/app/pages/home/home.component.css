@@ -1,0 +1,59 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('./HomeImage.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: left;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: #5b3a29;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #40291d;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  pointer-events: none; 
+}
+
+
+
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+

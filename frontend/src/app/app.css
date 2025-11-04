@@ -1,0 +1,114 @@
+/* ====== GLOBAL STYLES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #ece0d1;
+  color: #38220f;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ====== HEADER ====== */
+#header {
+  width: 100%;
+  background-color: #634832;
+  color: #ece0d1;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* ====== MAIN CONTAINER ====== */
+#app {
+  flex: 1; /* pushes footer to bottom */
+  width: 100%;
+  max-width: 1200px;
+  background-color: #dbc1ac;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(56, 34, 15, 0.2);
+  margin: 30px auto 0 auto; /* remove bottom margin */
+  display: flex;
+  flex-direction: column; /* ensure internal elements stack properly */
+}
+
+
+/* ====== ROUTER VIEW ====== */
+#router-view {
+  padding: 40px;
+  background-color: #ece0d1;
+  min-height: 500px;
+}
+
+
+
+/* ====== NAVIGATION BUTTONS ====== */
+nav a {
+  color: #ece0d1;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #dbc1ac;
+}
+
+/* ====== CARD STYLE ====== */
+.card {
+  background-color: #dbc1ac;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 3px 8px rgba(99, 72, 50, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* ====== BUTTON STYLE ====== */
+button {
+  background-color: #967259;
+  color: #ece0d1;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #634832;
+}
+
+
+#footer {
+  background-color: #38220f;
+  color: #ece0d1;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-top: auto;
+  border-top: 2px solid #634832;
+}

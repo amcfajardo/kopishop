@@ -1,0 +1,283 @@
+.site-header {
+  background: #4b2e05;
+  color: #f5f5dc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 11px 50px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo {
+  font-size: 1.4rem;
+}
+.title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.nav a {
+  color: #f5f5dc;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav a:hover {
+  color: #dbc1ac;
+}
+
+.logo {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url('./cup.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+
+.cart-icon .badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #e63946;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+}
+
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.cart-panel.active {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cart-total {
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-btn,
+.clear-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-btn {
+  background: #6b4f4f;
+  color: white;
+}
+
+.clear-btn {
+  background: #ddd;
+}
+
+.empty {
+  text-align: center;
+  margin-top: 2rem;
+  color: #777;
+}
+
+
+/* CART ICON */
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  color: #f5f5dc;
+}
+
+.cart-icon .badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #e63946;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+}
+
+/* CART PANEL (SIDEBAR) */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px; 
+  height: 100vh;
+  background-color: #e3cbb3;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cart-panel.active {
+  right: 0;
+}
+
+/* CART HEADER */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.cart-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4b2e05;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #4b2e05;
+  transition: transform 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+}
+
+/* CART ITEMS */
+.cart-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 60vh;
+  padding-right: 5px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.cart-item button {
+  background: transparent;
+  border: none;
+  color: #e63946;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* CART FOOTER */
+.cart-total {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.checkout-btn,
+.clear-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.checkout-btn {
+  background: #4b2e05;
+  color: #fff;
+}
+
+.checkout-btn:hover {
+  background: #5d3a07;
+}
+
+.clear-btn {
+  background: #ddd;
+  color: #333;
+}
+
+.clear-btn:hover {
+  background: #ccc;
+}
+
+/* EMPTY CART MESSAGE */
+.empty {
+  text-align: center;
+  margin-top: 2rem;
+  color: #777;
+  font-style: italic;
+}

@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: #ece0d1;
+  color: #38220f;
+}
+
+.main-content {
+  min-height: calc(100vh - 160px);
+  background-color: #dbc1ac;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  margin: 20px auto;
+  box-shadow: 0 6px 10px rgba(56, 34, 15, 0.2);
+  max-width: 1100px;
+}

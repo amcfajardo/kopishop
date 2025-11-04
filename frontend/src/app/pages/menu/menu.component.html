@@ -1,0 +1,98 @@
+<section class="menu-section container">
+  <h1>Our Menu</h1>
+  <p class="subtitle">Discover your new favorite drink</p>
+
+  <div class="menu-grid">
+
+    <!-- ☕ Coffee -->
+    <div class="menu-card" *ngIf="groupByCategory('Coffee').length">
+      <h3><i class="fa-solid fa-mug-saucer"></i> Coffee</h3>
+      <ul>
+        <li *ngFor="let item of groupByCategory('Coffee')">
+          <div class="item-row">
+            <strong>{{ item.name }}</strong>
+            <span>₱{{ item.price }}</span>
+            <button (click)="addToCart(item)" class="add-btn">+</button>
+          </div>
+          <p>{{ item.description }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 🧊 Iced Coffee -->
+    <div class="menu-card" *ngIf="groupByCategory('Iced Coffee').length">
+      <h3><i class="fa-solid fa-ice-cream"></i> Iced Coffee</h3>
+      <ul>
+        <li *ngFor="let item of groupByCategory('Iced Coffee')">
+          <div class="item-row">
+            <strong>{{ item.name }}</strong>
+            <span>₱{{ item.price }}</span>
+            <button (click)="addToCart(item)" class="add-btn">+</button>
+          </div>
+          <p>{{ item.description }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 🧋 Milk Tea -->
+    <div class="menu-card" *ngIf="groupByCategory('Milk Tea').length">
+      <h3><i class="fa-solid fa-mug-hot"></i> Milk Tea</h3>
+      <ul>
+        <li *ngFor="let item of groupByCategory('Milk Tea')">
+          <div class="item-row">
+            <strong>{{ item.name }}</strong>
+            <span>₱{{ item.price }}</span>
+            <button (click)="addToCart(item)" class="add-btn">+</button>
+          </div>
+          <p>{{ item.description }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 🍵 Tea -->
+    <div class="menu-card" *ngIf="groupByCategory('Tea').length">
+      <h3><i class="fa-solid fa-leaf"></i> Tea</h3>
+      <ul>
+        <li *ngFor="let item of groupByCategory('Tea')">
+          <div class="item-row">
+            <strong>{{ item.name }}</strong>
+            <span>₱{{ item.price }}</span>
+            <button (click)="addToCart(item)" class="add-btn">+</button>
+          </div>
+          <p>{{ item.description }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 🍫 Non-Coffee -->
+    <div class="menu-card" *ngIf="groupByCategory('Non-Coffee').length">
+      <h3><i class="fa-solid fa-bottle-droplet"></i> Non-Coffee</h3>
+      <ul>
+        <li *ngFor="let item of groupByCategory('Non-Coffee')">
+          <div class="item-row">
+            <strong>{{ item.name }}</strong>
+            <span>₱{{ item.price }}</span>
+            <button (click)="addToCart(item)" class="add-btn">+</button>
+          </div>
+          <p>{{ item.description }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 🥐 Pastry -->
+    <div class="menu-card" *ngIf="groupByCategory('Pastry').length">
+      <h3><i class="fa-solid fa-cookie-bite"></i> Pastry</h3>
+      <ul>
+        <li *ngFor="let item of groupByCategory('Pastry')">
+          <div class="item-row">
+            <strong>{{ item.name }}</strong>
+            <span>₱{{ item.price }}</span>
+            <button (click)="addToCart(item)" class="add-btn">+</button>
+          </div>
+          <p>{{ item.description }}</p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>

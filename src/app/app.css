@@ -1,0 +1,91 @@
+/* ====== Global Styles ====== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ece0d1; /* light beige */
+  color: #38220f; /* dark coffee text */
+}
+
+/* ====== Layout ====== */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ====== Header ====== */
+#header {
+  background-color: #634832; /* medium dark coffee */
+  color: #ece0d1;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(56, 34, 15, 0.2);
+}
+
+/* ====== Navigation Links (if you have any) ====== */
+nav a {
+  color: #ece0d1;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #dbc1ac;
+}
+
+/* ====== Router View ====== */
+#router-view {
+  flex: 1;
+  padding: 2rem;
+  background-color: #dbc1ac; /* soft latte color */
+  border-top: 3px solid #967259;
+  border-bottom: 3px solid #967259;
+}
+
+/* ====== Footer ====== */
+#footer {
+  background-color: #38220f; /* dark espresso */
+  color: #ece0d1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ====== Buttons ====== */
+button {
+  background-color: #967259;
+  color: #ece0d1;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #634832;
+}
+
+/* ====== Cards or Sections ====== */
+.section {
+  background-color: #ece0d1;
+  border: 1px solid #967259;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(56, 34, 15, 0.1);
+}
+
+/* ====== Titles ====== */
+h1, h2, h3 {
+  color: #38220f;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+}

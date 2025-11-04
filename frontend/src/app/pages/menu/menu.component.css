@@ -1,0 +1,156 @@
+/* ===== Container & Title ===== */
+.menu-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #d7bca4;
+  min-height: 100vh;
+}
+
+.menu-section h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #4b2c20;
+  margin-bottom: 0.25rem;
+}
+
+.menu-section .subtitle {
+  color: #6a4f37;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== Grid Layout (3 per row) ===== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Menu Card (Fixed Square) ===== */
+.menu-card {
+  background-color: #f4e1ce;
+  border: 1px solid #c9a888;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(75, 44, 32, 0.1);
+  padding: 1.5rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  aspect-ratio: 1 / 1; /* 👈 makes it a perfect square */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-card:hover {
+  box-shadow: 0 4px 14px rgba(75, 44, 32, 0.2);
+  transform: translateY(-3px);
+}
+
+/* ===== Card Header ===== */
+.menu-card h3 {
+  font-size: 1.1rem;
+  color: #4b2c20;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.menu-card i {
+  color: #4b2c20;
+  font-size: 1.1rem;
+}
+
+/* ===== Menu Items ===== */
+.menu-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* fills available vertical space */
+  overflow-y: auto; /* scroll if content is too tall */
+}
+
+/* scrollbar subtle style */
+.menu-card ul::-webkit-scrollbar {
+  width: 6px;
+}
+.menu-card ul::-webkit-scrollbar-thumb {
+  background-color: #c9a888;
+  border-radius: 10px;
+}
+
+.menu-card li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  border-bottom: 1px solid #e3cbb3;
+  padding: 0.6rem 0;
+  gap: 1rem;
+}
+
+.menu-card li:last-child {
+  border-bottom: none;
+}
+
+.menu-card li strong {
+  font-size: 1rem;
+  color: #3c2a1e;
+}
+
+.menu-card li p {
+  grid-column: 1 / 4;
+  margin: 0.3rem 0 0;
+  color: #7a5e45;
+  font-size: 0.9rem;
+}
+
+/* ===== Price ===== */
+.menu-card span {
+  color: #4b2c20;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ===== Add Button ===== */
+.add-btn {
+  background-color: #4b2c20;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #3a2117;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-card {
+    aspect-ratio: 1 / 1;
+    padding: 1rem;
+  }
+
+  .menu-card li {
+    grid-template-columns: 1fr auto;
+  }
+
+  .menu-card li p {
+    grid-column: 1 / 3;
+  }
+}
