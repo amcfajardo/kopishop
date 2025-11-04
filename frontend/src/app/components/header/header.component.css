@@ -308,3 +308,17 @@
   background-color: #5a2e1a;
 }
 
+
+.order-tracking-btn {
+  background-color: #634832;
+  color: #ece0d1;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.order-tracking-btn:hover {
+  background-color: #967259;
+}
