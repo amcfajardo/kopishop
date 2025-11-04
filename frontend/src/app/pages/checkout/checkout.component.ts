@@ -39,29 +39,45 @@ export class CheckoutComponent implements OnInit {
   }
 
   placeOrder() {
-    if (
-      !this.customer.fullName ||
-      !this.customer.phone ||
-      !this.customer.email ||
-      !this.customer.pickupTime
-    ) {
-      alert('⚠️ Please fill in all required fields.');
-      return;
-    }
-
-    if (this.cartItems.length === 0) {
-      alert('🛒 Your cart is empty.');
-      return;
-    }
-
-    alert(' Order placed successfully!');
-    console.log('Order Details:', {
-      customer: this.customer,
-      items: this.cartItems,
-      total: this.total
-    });
-
-    this.cartService.clearCart();
-    this.router.navigate(['/menu']);
+  if (
+    !this.customer.fullName ||
+    !this.customer.phone ||
+    !this.customer.email ||
+    !this.customer.pickupTime
+  ) {
+    alert('⚠️ Please fill in all required fields.');
+    return;
   }
+
+  if (this.cartItems.length === 0) {
+    alert('🛒 Your cart is empty.');
+    return;
+  }
+
+  // Build order object
+  const order = {
+    id: Date.now(),
+    orderTime: new Date(),
+    status: 'received',
+    pickupTime: this.customer.pickupTime,
+    paymentMethod: this.customer.paymentMethod,
+    total: this.total,
+    customerInfo: {
+      name: this.customer.fullName,
+      phone: this.customer.phone,
+      email: this.customer.email
+    },
+    items: this.cartItems
+  };
+
+  // Save order in CartService
+  this.cartService.setLastOrder(order);
+
+  // Clear cart for next order
+  this.cartService.clearCart();
+
+  // Navigate to tracking page
+  this.router.navigate(['/order-tracking']);
+}
+
 }

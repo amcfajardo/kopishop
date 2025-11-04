@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-order-tracking',
@@ -8,21 +9,16 @@ import { CommonModule } from '@angular/common';
   templateUrl: './order-tracking.component.html',
   styleUrls: ['./order-tracking.component.css']
 })
-export class OrderTrackingComponent {
-  currentOrder = {
-    id: 12345,
-    orderTime: new Date(),
-    status: 'preparing',
-    pickupTime: '11:30 AM',
-    paymentMethod: 'card',
-    total: 23.50,
-    customerInfo: { name: 'John Doe' },
-    items: [
-      { name: 'Cappuccino', quantity: 2, price: 4.50 },
-      { name: 'Blueberry Muffin', quantity: 1, price: 3.50 }
-    ]
-  };
+export class OrderTrackingComponent implements OnInit {
+  currentOrder: any;
 
+  constructor(private cartService: CartService) {}
+
+  ngOnInit() {
+    this.currentOrder = this.cartService.getLastOrder();
+  }
+
+  
   getStatusMessage(status: string) {
     switch (status) {
       case 'received':

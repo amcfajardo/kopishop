@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class CartService {
   private cart: any[] = [];
+  private lastOrder: any = null; 
 
   getCartItems() {
     return this.cart;
@@ -38,10 +39,23 @@ export class CartService {
   }
 
   getTotal() {
-    return this.cart.reduce((sum, item) => sum + (Number(item.price) || 0) * (item.quantity || 1), 0);
+    return this.cart.reduce(
+      (sum, item) => sum + (Number(item.price) || 0) * (item.quantity || 1),
+      0
+    );
   }
 
   clearCart() {
     this.cart = [];
+  }
+
+  
+  setLastOrder(order: any) {
+    this.lastOrder = order;
+  }
+
+ 
+  getLastOrder() {
+    return this.lastOrder;
   }
 }
