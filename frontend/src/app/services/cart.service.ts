@@ -3,20 +3,16 @@ import { Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class CartService {
   private cart: any[] = [];
-  private lastOrder: any = null; 
+  private lastOrder: any = null;
 
   getCartItems() {
     return this.cart;
   }
 
   addToCart(item: any) {
-    // normalize id to number or string consistently
     const itemId = item.id ?? item._id ?? null;
-
-    // ensure price is a number
     const price = item.price !== undefined ? parseFloat(item.price) : 0;
 
-    // find existing by normalized id (handles string/number)
     const existing = this.cart.find(i => String(i.id) === String(itemId));
 
     if (existing) {
@@ -35,26 +31,45 @@ export class CartService {
   }
 
   removeFromCart(id: number | string) {
-    this.cart = this.cart.filter(i => String(i.id) !== String(id));
+    const normalizedId = String(id);
+    this.cart = this.cart.filter(i => String(i.id) !== normalizedId);
+    console.log('After removal:', this.cart);
   }
 
-  getTotal() {
+  updateQuantity(id: number | string, quantity: number) {
+    const item = this.cart.find(i => String(i.id) === String(id));
+    if (item) {
+      item.quantity = Math.max(1, quantity); // prevent 0 or negative
+    }
+  }
+
+  // ✅ Subtotal without tax
+  getSubtotal() {
     return this.cart.reduce(
       (sum, item) => sum + (Number(item.price) || 0) * (item.quantity || 1),
       0
     );
   }
 
+  // ✅ Tax (8%)
+  getTax() {
+    return this.getSubtotal() * 0.08;
+  }
+
+  // ✅ Total = subtotal + tax
+  getTotal() {
+    return this.getSubtotal() + this.getTax();
+  }
+
   clearCart() {
     this.cart = [];
   }
 
-  
+  // ✅ Save and retrieve last order
   setLastOrder(order: any) {
     this.lastOrder = order;
   }
 
- 
   getLastOrder() {
     return this.lastOrder;
   }

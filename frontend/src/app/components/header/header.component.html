@@ -17,6 +17,7 @@
     </div>
   </div>
 
+  <!-- CART PANEL -->
   <div class="cart-panel" [class.active]="cartVisible">
     <div class="cart-header">
       <h3>Your Cart</h3>
@@ -30,12 +31,14 @@
         <button (click)="removeItem(item._id)">Remove</button>
       </div>
 
+      <!-- Totals -->
       <div class="cart-total">
-        <strong>Total:</strong>
-        <span>${{ total.toFixed(2) }}</span>
+        <div><strong>Subtotal:</strong> ${{ subtotal.toFixed(2) }}</div>
+        <div><strong>Tax (8%):</strong> ${{ tax.toFixed(2) }}</div>
+        <div><strong>Total:</strong> ${{ total.toFixed(2) }}</div>
       </div>
 
-<button class="checkout-btn" routerLink="/checkout" (click)="toggleCart()">Checkout</button>
+      <button class="checkout-btn" routerLink="/checkout" (click)="toggleCart()">Checkout</button>
     </div>
 
     <ng-template #emptyCart>

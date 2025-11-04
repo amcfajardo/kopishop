@@ -1,23 +1,18 @@
-<section class="cart-container">
-  <h1>Your Cart</h1>
+<div class="cart">
+  <h2>My Cart</h2>
 
-  <div *ngIf="cartItems.length === 0" class="empty-cart">
-    <p>Your cart is empty.</p>
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <span>{{ item.name }}</span>
+    <span>₱{{ item.price }}</span>
+    <span>x{{ item.quantity }}</span>
+    <button (click)="removeItem(item.id)">Remove</button>
   </div>
 
-  <div *ngIf="cartItems.length > 0" class="cart-list">
-    <div *ngFor="let item of cartItems" class="cart-item">
-      <div class="cart-details">
-        <h3>{{ item.name }}</h3>
-        <p>₱{{ item.price.toFixed(2) }}</p>
-        <p>Qty: {{ item.quantity || 1 }}</p>
-      </div>
-      <button class="remove-btn" (click)="removeItem(item._id)">Remove</button>
-    </div>
+  <hr />
 
-    <div class="cart-total">
-      <h2>Total: ₱{{ total.toFixed(2) }}</h2>
-      <button class="checkout-btn" routerLink="/checkout">Checkout</button>
-    </div>
+  <div class="totals">
+    <p>Subtotal: ₱{{ subtotal | number:'1.2-2' }}</p>
+    <p>Tax (8%): ₱{{ tax | number:'1.2-2' }}</p>
+    <h3>Total: ₱{{ total | number:'1.2-2' }}</h3>
   </div>
-</section>
+</div>
