@@ -11,24 +11,24 @@ import { CartService } from '../../services/cart.service'; // ✅ Adjust path if
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  cartItems: any[] = []; // ✅ holds cart items
-  cartVisible = false;   // ✅ controls cart panel visibility
-  total = 0;             // ✅ total price
+  cartItems: any[] = []; 
+  cartVisible = false;   
+  total = 0;             
 
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    // ✅ initialize cart items
+    
     this.cartItems = this.cartService.getCartItems();
     this.total = this.cartService.getTotal();
   }
 
   toggleCart() {
-    this.cartVisible = !this.cartVisible; // ✅ show/hide cart panel
+    this.cartVisible = !this.cartVisible; 
   }
 
   onClearCart() {
-    this.cartService.clearCart(); // ✅ clear cart using service
+    this.cartService.clearCart(); 
     this.cartItems = [];
     this.total = 0;
   }

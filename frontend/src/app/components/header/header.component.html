@@ -35,7 +35,7 @@
         <span>${{ total.toFixed(2) }}</span>
       </div>
 
-      <button class="clear-btn" (click)="onClearCart()">Clear Cart</button>
+<button class="checkout-btn" routerLink="/checkout" (click)="toggleCart()">Checkout</button>
     </div>
 
     <ng-template #emptyCart>

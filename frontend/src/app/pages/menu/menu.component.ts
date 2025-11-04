@@ -27,11 +27,17 @@ export class MenuComponent implements OnInit {
   }
 
   addToCart(item: any) {
-    this.cartService.addToCart(item);
-  }
+  // debug: log the item being clicked
+  console.log('Add button clicked — item:', item);
+
+  // push a shallow copy of the item to avoid accidental mutation side-effects
+  const itemCopy = { ...item };
+
+  this.cartService.addToCart(itemCopy);
+}
+
 
   groupByCategory(category: string) {
     return this.menuItems.filter(item => item.category === category);
   }
 }
-
