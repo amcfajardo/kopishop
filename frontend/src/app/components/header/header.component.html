@@ -28,7 +28,7 @@
       <div class="cart-item" *ngFor="let item of cartItems">
         <div>{{ item.name }} (x{{ item.quantity }})</div>
         <div>${{ (item.price * item.quantity).toFixed(2) }}</div>
-        <button (click)="removeItem(item._id)">Remove</button>
+        <button (click)="removeItem(item.id ?? item._id)">Remove</button>
       </div>
 
       <!-- Totals -->

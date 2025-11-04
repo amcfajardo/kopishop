@@ -31,10 +31,16 @@ export class CartService {
   }
 
   removeFromCart(id: number | string) {
-    const normalizedId = String(id);
-    this.cart = this.cart.filter(i => String(i.id) !== normalizedId);
-    console.log('After removal:', this.cart);
-  }
+  const normalizedId = String(id);
+  this.cart = this.cart.filter(i => {
+    // support both i.id and i._id, and guard undefined
+    const itemId = i?.id ?? i?._id ?? '';
+    return String(itemId) !== normalizedId;
+  });
+
+  console.log('[CartService] Removed id=', normalizedId, ' -> cart now:', this.cart);
+}
+
 
   updateQuantity(id: number | string, quantity: number) {
     const item = this.cart.find(i => String(i.id) === String(id));
@@ -43,7 +49,7 @@ export class CartService {
     }
   }
 
-  // ✅ Subtotal without tax
+ 
   getSubtotal() {
     return this.cart.reduce(
       (sum, item) => sum + (Number(item.price) || 0) * (item.quantity || 1),
@@ -51,12 +57,12 @@ export class CartService {
     );
   }
 
-  // ✅ Tax (8%)
+  
   getTax() {
     return this.getSubtotal() * 0.08;
   }
 
-  // ✅ Total = subtotal + tax
+ 
   getTotal() {
     return this.getSubtotal() + this.getTax();
   }
@@ -65,7 +71,7 @@ export class CartService {
     this.cart = [];
   }
 
-  // ✅ Save and retrieve last order
+  
   setLastOrder(order: any) {
     this.lastOrder = order;
   }

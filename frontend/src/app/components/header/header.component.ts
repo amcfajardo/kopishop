@@ -36,10 +36,13 @@ export class HeaderComponent {
     this.total = this.subtotal + this.tax;
   }
 
-  removeItem(id: string) {
-    this.cartService.removeFromCart(id);
-    this.refreshCart();
-  }
+  removeItem(id: string | number) {
+  const normalized = String(id);
+  console.log('[Header] removeItem clicked id=', normalized);
+  this.cartService.removeFromCart(normalized);
+  this.refreshCart();
+}
+
 
   onClearCart() {
     this.cartService.clearCart();
