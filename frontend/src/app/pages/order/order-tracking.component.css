@@ -1,0 +1,208 @@
+body {
+  background-color: #ece0d1;
+  font-family: "Poppins", sans-serif;
+  color: #38220f;
+}
+
+.order-tracking-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #634832;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.back-link:hover {
+  color: #38220f;
+  background-color: #dbc1ac;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+}
+
+/* CARD STYLE */
+.card {
+  background-color: #dbc1ac;
+  border: 2px solid #967259;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(99, 72, 50, 0.2);
+}
+
+.card-header h2 {
+  color: #38220f;
+}
+
+.card-header p {
+  color: #967259;
+  font-size: 0.9rem;
+}
+
+.badge {
+  background-color: #634832;
+  color: #ece0d1;
+  border-radius: 8px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.status-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.status-icon {
+  font-size: 2rem;
+}
+
+.status-info h3 {
+  color: #38220f;
+  margin: 0;
+}
+
+.status-info p {
+  color: #967259;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  background-color: #ece0d1;
+  border-radius: 10px;
+  height: 8px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background-color: #634832;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* TIMELINE */
+.status-timeline {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+}
+
+.status-step {
+  text-align: center;
+  color: #967259;
+}
+
+.status-step.active p {
+  color: #38220f;
+  font-weight: 500;
+}
+
+.step-circle {
+  width: 48px;
+  height: 48px;
+  background-color: #dbc1ac;
+  border: 2px solid #967259;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.5rem;
+  color: #38220f;
+  font-size: 1.2rem;
+}
+
+.status-step.active .step-circle {
+  background-color: #634832;
+  color: #ece0d1;
+}
+
+/* PICKUP INFO */
+.pickup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.pickup-grid h4 {
+  color: #38220f;
+  margin-bottom: 0.2rem;
+}
+
+.pickup-grid p {
+  color: #967259;
+}
+
+/* ORDER DETAILS */
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ece0d1;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #967259;
+  margin: 1rem 0;
+}
+
+.summary-line,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3rem 0;
+}
+
+.summary-line span {
+  color: #634832;
+}
+
+.summary-total strong {
+  color: #38220f;
+  font-size: 1.05rem;
+}
+
+/* EMPTY ORDER */
+.no-order {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.no-order .icon {
+  font-size: 3rem;
+  color: #967259;
+}
+
+.no-order h2 {
+  color: #38220f;
+  margin-bottom: 0.5rem;
+}
+
+.no-order p {
+  color: #967259;
+  margin-bottom: 1.5rem;
+}
+
+.back-btn {
+  background-color: #634832;
+  color: #ece0d1;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  background-color: #967259;
+}
