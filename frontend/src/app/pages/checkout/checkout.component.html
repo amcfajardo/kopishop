@@ -28,7 +28,7 @@
 
       <!-- Pickup Time -->
       <section class="card">
-        <h3>⏰ Pickup Time</h3>
+        <h3> Pickup Time</h3>
         <p>Select when you'd like to pick up your order</p>
         <select [(ngModel)]="customer.pickupTime" required>
           <option value="">Choose a time</option>
@@ -46,10 +46,10 @@
         <h3>Payment Method</h3>
         <p>How would you like to pay?</p>
         <label class="payment-option">
-          <input type="radio" [(ngModel)]="customer.paymentMethod" value="card"> 💳 Credit/Debit Card
+          <input type="radio" [(ngModel)]="customer.paymentMethod" value="card">  Credit/Debit Card
         </label>
         <label class="payment-option">
-          <input type="radio" [(ngModel)]="customer.paymentMethod" value="cash"> 💵 Pay at Pickup (Cash/Card)
+          <input type="radio" [(ngModel)]="customer.paymentMethod" value="cash">  Pay at Pickup (Cash/Card)
         </label>
       </section>
     </div>

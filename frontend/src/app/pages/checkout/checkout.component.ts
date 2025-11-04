@@ -54,7 +54,7 @@ export class CheckoutComponent implements OnInit {
       return;
     }
 
-    alert('✅ Order placed successfully!');
+    alert(' Order placed successfully!');
     console.log('Order Details:', {
       customer: this.customer,
       items: this.cartItems,
