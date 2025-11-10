@@ -1,0 +1,88 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "category": "Coffee",
+      "name": "Cappuccino",
+      "price": 120,
+      "description": "A rich espresso with steamed milk and a layer of foamed milk."
+    },
+    {
+      "id": 2,
+      "category": "Coffee",
+      "name": "Americano",
+      "price": 100,
+      "description": "A smooth blend of espresso and hot water for a bold flavor."
+    },
+    {
+      "id": 3,
+      "category": "Iced Coffee",
+      "name": "Iced Latte",
+      "price": 130,
+      "description": "Espresso with chilled milk and ice, perfect for warm days."
+    },
+    {
+      "id": 4,
+      "category": "Iced Coffee",
+      "name": "Iced Mocha",
+      "price": 150,
+      "description": "Chocolate and espresso mixed with cold milk and ice."
+    },
+    {
+      "id": 5,
+      "category": "Milk Tea",
+      "name": "Classic Milk Tea",
+      "price": 110,
+      "description": "Authentic black tea with creamy milk and brown sugar."
+    },
+    {
+      "id": 6,
+      "category": "Milk Tea",
+      "name": "Wintermelon Milk Tea",
+      "price": 120,
+      "description": "Sweet wintermelon flavor mixed with black tea and milk."
+    },
+    {
+      "id": 7,
+      "category": "Tea",
+      "name": "Green Tea",
+      "price": 90,
+      "description": "Freshly brewed green tea with a light and earthy aroma."
+    },
+    {
+      "id": 8,
+      "category": "Tea",
+      "name": "Chamomile Tea",
+      "price": 95,
+      "description": "A soothing herbal infusion with a calming floral taste."
+    },
+    {
+      "id": 9,
+      "category": "Non-Coffee",
+      "name": "Hot Chocolate",
+      "price": 130,
+      "description": "Rich and creamy chocolate drink topped with whipped cream."
+    },
+    {
+      "id": 10,
+      "category": "Non-Coffee",
+      "name": "Matcha Latte",
+      "price": 140,
+      "description": "Smooth blend of matcha green tea and steamed milk."
+    },
+    {
+      "id": 11,
+      "category": "Pastry",
+      "name": "Blueberry Muffin",
+      "price": 85,
+      "description": "Soft muffin packed with sweet blueberries."
+    },
+    {
+      "id": 12,
+      "category": "Pastry",
+      "name": "Chocolate Croissant",
+      "price": 95,
+      "description": "Flaky croissant filled with rich melted chocolate."
+    }
+  ]
+}
